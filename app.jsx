@@ -71,7 +71,28 @@ function Header() {
           </div>
         </div>
       </div>
+      {/* animated decorative pills */}
+      <AnimatedPills />
     </header>
+  );
+}
+
+function AnimatedPills() {
+  // decorative floating pills — purely visual
+  const pills = [
+    { id: 1, cls: 'pill pill--blue', style: { left: '8%', top: '20%', animationDelay: '0s' } },
+    { id: 2, cls: 'pill pill--white', style: { left: '22%', top: '10%', animationDelay: '1s' } },
+    { id: 3, cls: 'pill pill--capsule', style: { left: '40%', top: '18%', animationDelay: '0.6s' } },
+    { id: 4, cls: 'pill pill--blue', style: { left: '62%', top: '8%', animationDelay: '0.2s' } },
+    { id: 5, cls: 'pill pill--capsule', style: { left: '78%', top: '22%', animationDelay: '1.2s' } },
+  ];
+
+  return (
+    <div className="animated-pills" aria-hidden="true">
+      {pills.map(p => (
+        <div key={p.id} className={p.cls} style={p.style}></div>
+      ))}
+    </div>
   );
 }
 
@@ -90,6 +111,20 @@ function FeatureStrip() {
         <h3>Quick support</h3>
         <p>Instant chatbot guidance for common medication questions.</p>
       </article>
+    </section>
+  );
+}
+
+function PhotoGallery() {
+  // looks for images in assets/photos/photo1.jpg ... photo4.jpg
+  const photos = [1,2,3,4].map(i => `assets/photos/photo${i}.jpg`);
+  return (
+    <section className="photo-gallery">
+      {photos.map((src, i) => (
+        <div className="photo-item" key={i}>
+          <img src={src} alt={`Gallery ${i+1}`} onError={(e)=>{e.target.style.opacity=0.16}} />
+        </div>
+      ))}
     </section>
   );
 }
@@ -202,6 +237,7 @@ function App() {
     <div>
       <Header />
       <FeatureStrip />
+      <PhotoGallery />
 
       <main className="app-grid">
         <section className="panel info-panel">
