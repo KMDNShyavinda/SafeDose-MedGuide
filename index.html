@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeDose MedGuide</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-copy">
+        <span class="badge">Medicines made simple</span>
+        <h1>SafeDose MedGuide</h1>
+        <p>Your JavaScript-powered medicine reference with an AI support chatbot.</p>
+        <div class="header-notes">
+          <div class="note-pill"><span>Trusted dosage</span></div>
+          <div class="note-pill note-pill-accent"><span>Clear safety guidance</span></div>
+        </div>
+      </div>
+      <div class="header-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-icon">💊</div>
+          <strong>Fast drug lookup</strong>
+          <p>Find common medicines instantly with one search.</p>
+        </div>
+        <div class="visual-card visual-card-soft">
+          <div class="visual-icon">🩺</div>
+          <strong>AI support chat</strong>
+          <p>Ask questions about dosage, side effects, or safety.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="feature-strip">
+    <article class="feature-card">
+      <h3>Medicine details</h3>
+      <p>Browse dosage, side effects, and safety recommendations clearly.</p>
+    </article>
+    <article class="feature-card">
+      <h3>Pro-level clarity</h3>
+      <p>Professional interface with clean, readable drug information.</p>
+    </article>
+    <article class="feature-card">
+      <h3>Quick support</h3>
+      <p>Instant chatbot guidance for common medication questions.</p>
+    </article>
+  </section>
+
+  <main class="app-grid">
+    <section class="panel info-panel">
+      <div class="search-box">
+        <label for="drug-search">Search medicine</label>
+        <input id="drug-search" type="search" placeholder="Enter drug name" />
+        <button id="search-button">Search</button>
+      </div>
+
+      <div id="drug-list" class="drug-list"></div>
+
+      <article id="drug-details" class="drug-details">
+        <h2>Medicine details</h2>
+        <p>Select a drug from the list or search to view dosage, side effects, and safety guidelines.</p>
+      </article>
+    </section>
+
+    <aside class="panel chat-panel">
+      <h2>AI Support Chatbot</h2>
+      <div id="chat-messages" class="chat-messages"></div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" type="text" placeholder="Ask about dosage, side effects, or safety" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

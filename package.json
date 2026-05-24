@@ -1,0 +1,13 @@
+{
+  "name": "safedose-medguide",
+  "version": "0.1.0",
+  "description": "Web-based medicine information system with AI chatbot support.",
+  "private": true,
+  "scripts": {
+    "start": "http-server ./ -o",
+    "build": "echo \"No build step required for static app.\""
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
